@@ -36,7 +36,6 @@ This handles the stdio connection properly for Claude Desktop integration
 
 import sys
 import os
-import asyncio
 import logging
 from pathlib import Path
 
@@ -62,26 +61,28 @@ load_dotenv(project_root / '.env')
 # Import and register tools
 import tools
 
-# Import MCP server
-from interfaces.mcp_server import MCPToolServer
+# We'll import the stdio server in main() to avoid early imports
 
-async def main():
+def main():
     """Main entry point for Claude Desktop"""
     logger = logging.getLogger(__name__)
     
     try:
         logger.info("Initializing AI Tools MCP server for Claude Desktop...")
         
-        # Create server instance
-        server = MCPToolServer()
+        # Use the custom stdio MCP server that handles initialization properly
+        from ai_tools_stdio_mcp import AIToolsStdioMCP
         
-        # Get tool count from registry instead of server internals
+        # Create server instance
+        server = AIToolsStdioMCP()
+        
+        # Get tool count from registry
         from core.registry import registry
         tool_count = len(registry.list_tools())
         logger.info(f"Server created with {tool_count} tools registered")
         
-        # Run the server (this will handle stdio properly)
-        await server.run()
+        # Run the server (this is synchronous for stdio)
+        server.run()
         
     except Exception as e:
         logger.error(f"Server startup failed: {e}")
@@ -91,7 +92,7 @@ async def main():
 
 if __name__ == "__main__":
     try:
-        asyncio.run(main())
+        main()
     except KeyboardInterrupt:
         logging.getLogger(__name__).info("Server shutdown requested")
         sys.exit(0)

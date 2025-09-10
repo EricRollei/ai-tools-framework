@@ -44,7 +44,8 @@ from mcp.types import (
     InitializeRequestParams,
     InitializeResult,
     ClientCapabilities,
-    Implementation
+    Implementation,
+    InitializeRequest
 )
 from core.registry import registry
 from core.base import ToolResultType
