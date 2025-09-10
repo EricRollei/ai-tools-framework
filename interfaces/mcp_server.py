@@ -40,7 +40,11 @@ from mcp.server.stdio import stdio_server
 from mcp.types import (
     Tool as MCPTool,
     TextContent,
-    CallToolResult
+    CallToolResult,
+    InitializeRequestParams,
+    InitializeResult,
+    ClientCapabilities,
+    Implementation
 )
 from core.registry import registry
 from core.base import ToolResultType
@@ -200,10 +204,12 @@ class MCPToolServer:
             
             async with stdio_server() as (read_stream, write_stream):
                 logger.info("MCP server connected and ready")
+                # Create proper initialization options for the server
+                init_options = self.server.create_initialization_options()
                 await self.server.run(
                     read_stream, 
                     write_stream,
-                    initialization_options={}
+                    initialization_options=init_options
                 )
                 
         except KeyboardInterrupt:
