@@ -262,13 +262,13 @@ Add these to your `.env` file to enable communication tools:
 
 ```bash
 # Slack Integration
-SLACK_BOT_TOKEN=xoxb-1234567890-1234567890123-abcdefghijklmnopqrstuvwx
+SLACK_BOT_TOKEN=xoxb-your-bot-token-here
 
 # Discord Integration  
-DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/1234567890/abcdefghijklmnopqrstuvwxyz
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/your-webhook-id/your-webhook-token
 
 # Microsoft Teams Integration
-TEAMS_WEBHOOK_URL=https://outlook.office.com/webhook/12345678-1234-1234-1234-123456789012@12345678-1234-1234-1234-123456789012/IncomingWebhook/abcdefghijklmnopqrstuvwxyz
+TEAMS_WEBHOOK_URL=https://outlook.office.com/webhook/your-teams-webhook-url
 ```
 
 ---

@@ -76,7 +76,7 @@ git diff --cached | grep -i "key\|password\|token\|secret"
 - Log files with sensitive information
 
 ### Content:
-- `SERPER_API_KEY=sk-abc123...`
+- `SERPER_API_KEY=your-actual-api-key`
 - `password="realpassword"`
 - `smtp_user="real@email.com"`
 - Personal email addresses
