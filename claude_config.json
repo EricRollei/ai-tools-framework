@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ai-tools": {
+      "command": "python",
+      "args": ["a:/ai-tools/claude_server.py"],
+      "cwd": "a:/ai-tools",
+      "env": {
+        "PYTHONPATH": "a:/ai-tools",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

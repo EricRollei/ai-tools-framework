@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ]
+    },
+    "simple-stdio": {
+      "command": "A:/ai-tools/venv/Scripts/python.exe",
+      "args": [
+        "A:/ai-tools/simple_stdio_mcp.py"
+      ],
+      "cwd": "A:/ai-tools"
+    },
+    "ai-tools-stdio": {
+      "command": "A:/ai-tools/venv/Scripts/python.exe",
+      "args": [
+        "A:/ai-tools/ai_tools_stdio_mcp.py"
+      ],
+      "cwd": "A:/ai-tools"
+    }
+  }
+}

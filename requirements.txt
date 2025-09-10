@@ -1,0 +1,48 @@
+
+# AI Tools Framework Requirements
+# Core dependencies for the framework
+
+# === Core Framework ===
+# MCP (Model Context Protocol) for LM Studio integration
+mcp>=1.13.1
+
+# HTTP client for web search functionality
+httpx>=0.25.0
+
+# Async HTTP client for HTTP requests and downloads
+aiohttp>=3.8.0
+
+# Data validation and settings management
+pydantic>=2.5.0
+pydantic-settings>=2.0.0
+
+# Configuration management
+python-dotenv>=1.0.0
+
+# System information tools
+psutil>=5.9.0
+
+# === Data Processing ===
+# Excel and data manipulation
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Database drivers
+# pymysql>=1.1.0  # MySQL (optional)
+# psycopg2-binary>=2.9.0  # PostgreSQL (optional)
+# PDF generation (for create_pdf tool)
+reportlab>=4.0.0
+
+# Word document creation (for create_word tool)
+python-docx>=1.1.0
+
+# === Development/Testing Dependencies (Optional) ===
+# FastAPI and Uvicorn are only needed if using the OpenAI API interface
+# fastapi>=0.104.0
+# uvicorn[standard]>=0.24.0
+
+# === Notes ===
+# - unicodedata is part of Python standard library (used for text cleaning)
+# - All other imports (asyncio, json, logging, pathlib, etc.) are standard library
+# - Email tools use standard library smtplib and imaplib
+# - System tools use standard library platform, socket, subprocess
