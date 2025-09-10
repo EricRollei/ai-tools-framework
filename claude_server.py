@@ -68,6 +68,7 @@ def main():
     logger = logging.getLogger(__name__)
     
     try:
+        logger.info("=== CLAUDE SERVER STARTUP (claude_server.py) ===")
         logger.info("Initializing AI Tools MCP server for Claude Desktop...")
         
         # Use the custom stdio MCP server that handles initialization properly

@@ -75,7 +75,16 @@ class AIToolsStdioMCP:
         
     def handle_initialize(self, params: Dict[str, Any]) -> Dict[str, Any]:
         """Handle initialization request"""
-        logger.info(f"Initialize request: {params}")
+        logger.info(f"Initialize request received: {params}")  # Enhanced logging
+        
+        # Check what type params actually is  
+        logger.info(f"Params type: {type(params)}")  # Debug the type
+        
+        # Log if capabilities exists and its type
+        if 'capabilities' in params:
+            logger.info(f"Capabilities found: {params['capabilities']}, type: {type(params['capabilities'])}")
+        else:
+            logger.info("No capabilities in params")
         
         return {
             "protocolVersion": "2025-06-18",
@@ -267,6 +276,7 @@ class AIToolsStdioMCP:
     def run(self):
         """Run the server synchronously"""
         logger.info("Starting AI Tools stdio MCP server...")
+        logger.info("=== This is the CUSTOM stdio MCP server (ai_tools_stdio_mcp.py) ===")
         
         try:
             for line in sys.stdin:
