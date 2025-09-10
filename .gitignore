@@ -28,12 +28,16 @@ ENV/
 env/
 .venv/
 
-# Environment variables
+# Environment variables - CRITICAL: Never commit these!
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
+*.env
+**/secrets.*
+**/*secret*
+**/*password*
+**/*key*
+**/*token*
 
 # IDE
 .vscode/settings.json

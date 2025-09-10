@@ -1,10 +1,4 @@
-"""
-AI Tools Framework: __init__.py
-Description: AI Tools Framework component
-Author: Eric Hiss (GitHub: EricRollei)
-Contact: [eric@historic.camera, eric@rollei.us]
-Version: 1.0.0
-Date: 2025-09-09
+AI Tools Framework
 License: Dual License (Non-Commercial and Commercial Use)
 Copyright (c) 2025 Eric Hiss. All rights reserved.
 
@@ -21,10 +15,20 @@ INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
 PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 Dependencies:
-This code depends on several third-party libraries, each with its own license.
-See LICENSE file for complete dependency information.
-
-__init__.py - Part of AI Tools Framework
-A comprehensive productivity framework with 27 tools for Claude Desktop and LM Studio
-"""
-
+This software depends on several third-party libraries, each with its own license:
+- aiohttp: Apache 2.0
+- pandas: BSD 3-Clause  
+- openpyxl: MIT License
+- beautifulsoup4: MIT License
+- requests: Apache 2.0
+- playwright: Apache 2.0
+- pydantic: MIT License
+- python-dateutil: Apache 2.0 and BSD 3-Clause
+- reportlab: BSD 3-Clause
+- python-docx: MIT License
+- pyperclip: BSD 3-Clause
+- psutil: BSD 3-Clause
+- lxml: BSD 3-Clause
+- numpy: BSD 3-Clause
+- Pillow: HPND License
+- python-dotenv: BSD 3-Clause

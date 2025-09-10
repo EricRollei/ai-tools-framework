@@ -293,7 +293,18 @@ python diagnose_claude.py  # Run full diagnostic
 
 ## 📄 License
 
-MIT License - See LICENSE file for details
+**Dual License** (Non-Commercial and Commercial Use)
+- **Non-Commercial**: Creative Commons Attribution-NonCommercial 4.0 International 
+- **Commercial**: Separate license required - Contact eric@historic.camera
+- **Author**: Eric Hiss (GitHub: EricRollei)
+- See [LICENSE](LICENSE) file for complete details
+
+## 👨‍💻 Author & Contact
+
+**Eric Hiss** 
+- GitHub: [@EricRollei](https://github.com/EricRollei)
+- Email: eric@historic.camera, eric@rollei.us
+- Project: AI Tools Framework v1.0.0
 
 ---
 
