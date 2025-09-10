@@ -235,6 +235,18 @@ class AIToolsStdioMCP:
         
         logger.info(f"Handling request: {method} (ID: {request_id})")
         
+        # Handle notifications (no id field, no response needed)
+        if request_id is None:
+            if method == "notifications/initialized":
+                logger.info("Server initialized notification received")
+                return None
+            elif method == "notifications/cancelled":
+                logger.info(f"Request cancelled: {params}")
+                return None
+            else:
+                logger.warning(f"Unknown notification: {method}")
+                return None
+        
         try:
             if method == "initialize":
                 result = self.handle_initialize(params)
@@ -290,11 +302,13 @@ class AIToolsStdioMCP:
                     request = json.loads(line)
                     response = self.handle_request(request)
                     
-                    response_json = json.dumps(response)
-                    logger.debug(f"Sending: {response_json}")
-                    
-                    print(response_json)
-                    sys.stdout.flush()
+                    # Only send response if it's not None (notifications don't get responses)
+                    if response is not None:
+                        response_json = json.dumps(response)
+                        logger.debug(f"Sending: {response_json}")
+                        
+                        print(response_json)
+                        sys.stdout.flush()
                     
                 except json.JSONDecodeError as e:
                     logger.error(f"Invalid JSON received: {e}")
